@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+
+# Local datasets and Kaggle downloads. Colab/Jupyter should download VisDrone
+# from Kaggle instead of storing the dataset in GitHub.
+VisDrone2019-DET-*/
+data/
+kaggle.json
+*.zip
+
+# Generated outputs should be saved to Google Drive in Colab, not committed.
+outputs/
+runs/
+*.pt
