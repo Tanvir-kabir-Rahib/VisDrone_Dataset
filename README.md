@@ -1,6 +1,6 @@
 # VisDrone Human and Car Detection
 
-Computer vision pipeline for the Antlings AI/ML technical assessment. It analyzes VisDrone aerial images, detects humans and cars, counts humans, and creates visualization/evaluation outputs. The GitHub repository intentionally contains only source code, documentation, configuration, and the Colab notebook. Dataset files, model weights, and generated outputs are downloaded or saved outside GitHub.
+Computer vision pipeline for the Antlings AI/ML technical assessment. The GitHub repository intentionally contains only the files required to run the project in Google Colab plus this README. Dataset files, model weights, and generated outputs are downloaded or saved outside GitHub.
 
 ## What Is Included
 
@@ -8,8 +8,6 @@ Computer vision pipeline for the Antlings AI/ML technical assessment. It analyze
 - YOLO fine-tuning entry point: `scripts/train_yolo.py`
 - Human/car detection and counting: `scripts/detect_count.py`
 - Model evaluation wrapper: `scripts/evaluate_yolo.py`
-- Optional tracking wrapper: `scripts/track_yolo.py`
-- Short assessment report: `reports/TECHNICAL_REPORT.md`
 - Colab training workflow: `notebooks/VisDrone_Colab_Training.ipynb`
 
 ## What Not To Upload To GitHub
@@ -57,7 +55,7 @@ The local machine used to prepare this project already had Pillow, NumPy, Matplo
 
 ## Run on Google Colab
 
-For actual 80-epoch training, use Colab/GPU instead of local CPU. Open `notebooks/VisDrone_Colab_Training.ipynb` and follow `COLAB.md`.
+For training, use Colab/GPU instead of local CPU. Open `notebooks/VisDrone_Colab_Training.ipynb`, set the runtime to GPU, upload `kaggle.json` when prompted, and run the notebook top to bottom.
 
 The notebook handles:
 
@@ -144,22 +142,13 @@ python3 scripts/evaluate_yolo.py \
   --split val
 ```
 
-## Optional Tracking
-
-```bash
-python3 scripts/track_yolo.py \
-  --weights outputs/training/visdrone-yolo/weights/best.pt \
-  --source path/to/video.mp4 \
-  --tracker bytetrack.yaml
-```
-
 ## Demo Asset
 
 ```bash
 python3 scripts/make_demo_slideshow.py
 ```
 
-This creates `outputs/demo/visdrone_demo.gif` from the generated charts and counting outputs. A suggested narration plan is in `reports/DEMO_VIDEO_STORYBOARD.md`.
+This creates `outputs/demo/visdrone_demo.gif` from the generated charts and counting outputs.
 
 ## Notes
 
